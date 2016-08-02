@@ -72,35 +72,4 @@ Shader "Custom/ExitWater" {
 			ENDCG
 		}
 	}
-
-	/*SubShader{
-		Tags{ "RenderType" = "Opaque" }
-
-		CGPROGRAM
-#pragma surface surf Lambert
-
-	struct Input {
-		float2 uv_MainTex;
-		float2 uv_Water;
-	};
-
-	sampler2D _MainTex;
-	sampler2D _Water;
-	uniform float _Slide;
-
-	void surf(Input IN, inout SurfaceOutput o)
-	{
-		//float time = _Slide + _Time.x;
-		//float fader = smoothstep(1, 0.0, time * 7);
-		//half4 waterflow = tex2D(_Water, float2(IN.uv_Water.x,IN.uv_Water.y + (time * 5)))*fader;
-		//half4 col1 = tex2D(_MainTex, float2(IN.uv_MainTex.x + waterflow.r,IN.uv_MainTex.y + waterflow.r)) * 1;
-		//o.Albedo = col1.rgb;
-		//o.Albedo = float3(1.,0.,0.);
-		//o.Alpha = 1;
-		o.Albedo = tex2D(_MainTex, IN.uv_MainTex);
-		o.Alpha = 0.5;
-	}
-	ENDCG
-	}
-		FallBack "Diffuse"*/
 }
