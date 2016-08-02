@@ -4,7 +4,6 @@ Shader "Custom/ExitWater" {
 
 		_startTime("startTime", FLOAT) = 0
 		_currTime("currTime", FLOAT) = 0
-		//_above("above", FLOAT) = 0
 
 		_WaterTex1("WaterTex1 (BW)", 2D) = "white" {}
 		_fadeout1("fadeout1", FLOAT) = 0.2
@@ -52,8 +51,8 @@ Shader "Custom/ExitWater" {
 			sampler2D Ceto_OceanMask;
 
 			float4 frag(v2f_img i) : COLOR{
-				float4 c = tex2D(_MainTex, i.uv);
-				float val = clamp((c.b*2.0 + c.g*1.25), 0.0, 1.0);
+				//float4 c = tex2D(_MainTex, i.uv);
+				//float val = clamp((c.b*2.0 + c.g*1.25), 0.0, 1.0);
 				float time = _currTime - _startTime;
 
 				float4 wf1 = tex2D(_WaterTex1, float2(i.uv.x, i.uv.y + (time * _scrolldown1))) * smoothstep(1.0, 0.0, time * _fadeout1);
